@@ -1,6 +1,6 @@
 <template>
   <h3>{{ name }}</h3>
-  <input type="text" @input="onInputContent" />
+  <input type="text" @change="onChangeContent" />
 </template>
 
 <script>
@@ -8,12 +8,11 @@ export default {
   data() {
     return {
       name: 'MEIMEI',
-      category: '',
     };
   },
   methods: {
-    onInputContent(event) {
-      console.log(event);
+    onChangeContent(event) {
+      console.log(event.target.value);
     },
   },
 };

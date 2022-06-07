@@ -1,6 +1,6 @@
 <template>
   <h3>{{ name }}</h3>
-  <input type="text" v-model.number="content" @change="onChangeContent" />
+  <input type="text" v-model.trim="content" @change="onChangeContent" />
   <span>➡️ Content: {{ content }}</span>
 </template>
 
@@ -9,15 +9,13 @@ export default {
   data() {
     return {
       name: 'MEIMEI',
-      content: 0,
+      content: '',
     };
   },
-  created() {
-    console.log('content 数据的类型（组件创建时）：', typeof this.content);
-  },
+
   methods: {
     onChangeContent() {
-      console.log('content 数据的类型（元素值变化后）：', typeof this.content);
+      console.log(this.content, this.content.length);
     },
   },
 };

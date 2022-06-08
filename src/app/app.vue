@@ -3,10 +3,12 @@
   <AppButton></AppButton>
   <AppButton />
   <app-button></app-button>
+  <AppDemoButton></AppDemoButton>
 </template>
 
 <script>
 import AppButton from './components/app-button.vue';
+import AppDemoButton from './components/app-demo-button.vue';
 export default {
   data() {
     return {
@@ -15,6 +17,7 @@ export default {
   },
   components: {
     AppButton,
+    AppDemoButton,
   },
 };
 </script>

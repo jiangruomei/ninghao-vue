@@ -1,13 +1,10 @@
 <template>
   <h3>{{ name }}</h3>
-  <AppButton @tap="onTapAppButton" @init="onInitAppButton">提交</AppButton>
-  <!-- <AppButton /> -->
-  <!-- <app-button></app-button>
-  <AppDemoButton></AppDemoButton> -->
+  <UserProfile></UserProfile>
 </template>
 
 <script>
-import AppButton from './components/app-button.vue';
+import UserProfile from './components/user.profile.vue';
 // import AppDemoButton from './components/app-demo-button.vue';
 export default {
   data() {
@@ -16,8 +13,7 @@ export default {
     };
   },
   components: {
-    AppButton,
-    // AppDemoButton,
+    UserProfile,
   },
   methods: {
     onTapAppButton(text) {

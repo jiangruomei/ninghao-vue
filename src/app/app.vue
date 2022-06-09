@@ -1,6 +1,10 @@
 <template>
   <h3>{{ name }}</h3>
-  <AppButton text="确定"></AppButton>
+  <AppButton
+    text="确定"
+    @tap="onTapAppButton"
+    @init="onInitAppButton"
+  ></AppButton>
   <AppButton />
   <app-button></app-button>
   <AppDemoButton></AppDemoButton>
@@ -18,6 +22,14 @@ export default {
   components: {
     AppButton,
     AppDemoButton,
+  },
+  methods: {
+    onTapAppButton(text) {
+      console.log('on tap app button', text);
+    },
+    onInitAppButton() {
+      console.log('on init app button');
+    },
   },
 };
 </script>

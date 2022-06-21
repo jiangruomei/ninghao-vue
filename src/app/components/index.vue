@@ -1,3 +1,13 @@
 <template>
-  <div>您好，欢迎访问宁皓网!</div>
+  <div @click="onClickText">您好，欢迎访问宁皓网!</div>
 </template>
+<script>
+export default {
+  methods: {
+    onClickText() {
+      this.$router.push('/about');
+      // this.$router.replace('/about');
+    },
+  },
+};
+</script>

@@ -34,5 +34,6 @@ label {
 .router-link-active {
   color: #505050;
   background: #eeeeee;
+  /* background: pink; */
   border-radius: 5px;
 }

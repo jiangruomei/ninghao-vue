@@ -5,8 +5,9 @@
 export default {
   methods: {
     onClickText() {
-      this.$router.push({ name: 'about' });
+      // this.$router.push('/about');
       // this.$router.replace('/about');
+      this.$router.push({ name: 'about' });
     },
   },
 };

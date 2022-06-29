@@ -5,12 +5,18 @@ import { createStore } from 'vuex';
  */
 const store = createStore({
   state: {
-    name: '宁浩网',
+    name: '宁皓网',
   },
 
   getters: {
     name(state) {
       return `🎈 ${state.name}`;
+    },
+  },
+
+  mutations: {
+    setName(state, data) {
+      state.name = data;
     },
   },
 });

@@ -1,13 +1,18 @@
 <template>
-  <h3>{{ name }}</h3>
+  <h3>{{ appName }}</h3>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   data() {
-    return {
-      name: 'MEIMEI',
-    };
+    return {};
+  },
+
+  computed: {
+    ...mapState({
+      appName: 'name',
+    }),
   },
 };
 </script>

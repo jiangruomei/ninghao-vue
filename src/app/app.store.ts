@@ -21,12 +21,16 @@ const store = createStore({
   },
 
   actions: {
-    getName({commit}) {
+    getName({commit,dispatch}) {
       const name = '宁皓网';
       commit('setName', name);
+      dispatch('preProcess');
       // context.commit('setName', name);
       // console.log(context);
     },
+    preProcess(){
+      console.log('执行预处理动作...');
+    }
   },
 });
 

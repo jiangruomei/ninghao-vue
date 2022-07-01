@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapMutations, mapActions } from 'vuex';
 export default {
   data() {
     return {};
@@ -14,10 +14,12 @@ export default {
   },
 
   created() {
-    this.$store.dispatch('getName');
+    // this.$store.dispatch('getName');
+    this.getName();
   },
 
   methods: {
+    ...mapActions(['getName']),
     ...mapMutations(['setName']),
     onClickName() {
       if (this.$store.state.name === '宁皓网') {

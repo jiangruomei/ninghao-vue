@@ -1,9 +1,12 @@
 <template>
-  <h3 @click="onClickName">{{ name }}</h3>
+  <h3 @click="onClickName">
+    {{ name }}
+    <span v-if="loading">加载中...</span>
+  </h3>
 </template>
 
 <script>
-import { mapGetters, mapMutations, mapActions } from 'vuex';
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 export default {
   data() {
     return {};
@@ -11,25 +14,16 @@ export default {
 
   computed: {
     ...mapGetters(['name']),
+    ...mapState(['loading']),
   },
 
   created() {
-    // this.$store.dispatch('getName');
     this.getName();
   },
 
   methods: {
     ...mapActions(['getName']),
     ...mapMutations(['setName']),
-    onClickName() {
-      if (this.$store.state.name === '宁皓网') {
-        // this.$store.commit('setName', 'NINGHAO');
-        this.setName('NINGHAO');
-      } else {
-        // this.$store.commit('setName', '宁皓网');
-        this.setName('宁皓网');
-      }
-    },
   },
 };
 </script>

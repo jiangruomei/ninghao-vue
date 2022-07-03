@@ -6,6 +6,7 @@ import { createStore } from 'vuex';
 const store = createStore({
   state: {
     name: '',
+    loading: false,
   },
 
   getters: {
@@ -18,19 +19,22 @@ const store = createStore({
     setName(state, data) {
       state.name = data;
     },
+
+    setLoading(state, data) {
+      state.loading = data;
+    },
   },
 
   actions: {
-    getName({commit,dispatch}) {
-      const name = '宁皓网';
-      commit('setName', name);
-      dispatch('preProcess');
-      // context.commit('setName', name);
-      // console.log(context);
+    getName({ commit }) {
+      commit('setLoading', true);
+
+      setTimeout(() => {
+        const name = '宁皓网';
+        commit('setName', name);
+        commit('setLoading', false);
+      }, 2000);
     },
-    preProcess(){
-      console.log('执行预处理动作...');
-    }
   },
 });
 

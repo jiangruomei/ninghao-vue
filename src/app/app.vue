@@ -6,11 +6,18 @@
         <div class="card-subtitle">Transition & animation</div>
       </div>
       <div class="card_content">
-        <div :class="['emoji', { hidden: !isActive }]">🌲</div>
+        <transition>
+          <div v-if="isActive" class="emoji">🌵</div>
+        </transition>
       </div>
       <div class="card_action">
-        <button @click="isActive = !isActive">请按这里</button>
+        <button @click="isActive = !isActive" :class="{ active: isActive }">
+          请按这里
+        </button>
       </div>
+    </div>
+    <div class="status">
+      <small>isActive: {{ isActive }}</small>
     </div>
   </div>
 </template>

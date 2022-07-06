@@ -6,9 +6,20 @@
         <div class="card-subtitle">Transition & animation</div>
       </div>
       <div class="card_content">
-        <transition name="pulse">
-          <div v-if="isActive" class="emoji">🎃</div>
+        <transition
+          name="custom-classes"
+          enter-active-class="animate__animated animate__tada"
+          leave-active-class="animate__animated animate__bounce"
+        >
+          <div v-if="isActive" class="emoji">👻</div>
         </transition>
+        <!-- <transition
+          name="custom-classes"
+          enter-active-class="animate__animated animate__tada"
+          leave-active-class="animate__animated animate__bounce"
+        >
+          <div v-if="isActive" class="emoji">👻</div>
+        </transition> -->
       </div>
       <div class="card_action">
         <button @click="isActive = !isActive" :class="{ active: isActive }">
@@ -35,4 +46,5 @@ export default {
 <style>
 @import './styles/app.css';
 @import './styles/card.css';
+@import './styles/animate.css';
 </style>

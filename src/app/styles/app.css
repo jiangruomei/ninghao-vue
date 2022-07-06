@@ -77,3 +77,11 @@
 .slide-leave-from {
   opacity: 1;
 }
+
+.pulse-enter-active {
+  animation: pulse 1s;
+}
+
+.pulse-leave-active {
+  animation: pulse 1s;
+}

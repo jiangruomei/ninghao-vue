@@ -10,16 +10,10 @@
           name="custom-classes"
           enter-active-class="animate__animated animate__tada"
           leave-active-class="animate__animated animate__bounce"
+          mode="out-in"
         >
-          <div v-if="isActive" class="emoji">👻</div>
+          <component :is="currentEmoji"></component>
         </transition>
-        <!-- <transition
-          name="custom-classes"
-          enter-active-class="animate__animated animate__tada"
-          leave-active-class="animate__animated animate__bounce"
-        >
-          <div v-if="isActive" class="emoji">👻</div>
-        </transition> -->
       </div>
       <div class="card_action">
         <button @click="isActive = !isActive" :class="{ active: isActive }">
@@ -34,12 +28,27 @@
 </template>
 
 <script>
+import GhostEmoji from './components/ghost-emoji.vue';
+import RobotEmoji from './components/robot-emoji.vue';
+
 export default {
   data() {
     return {
       name: 'MEIMEI',
       isActive: true,
+      emoji: 'GhostEmoji',
     };
+  },
+
+  computed: {
+    currentEmoji() {
+      return this.isActive ? 'GhostEmoji' : 'RobotEmoji';
+    },
+  },
+
+  components: {
+    GhostEmoji,
+    RobotEmoji,
   },
 };
 </script>

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { reactive, ref, toRefs } from 'vue';
+import { ref, onMounted } from 'vue';
 export default {
   setup() {
     const name = ref('宁皓网');
@@ -11,6 +11,12 @@ export default {
     const changeName = () => {
       name.value = 'NINGHAO';
     };
+
+    //生命周期
+    onMounted(() => {
+      console.log('mounted');
+    });
+
     return {
       name,
       changeName,

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 export default {
   setup() {
     const name = ref('宁皓网');
@@ -17,6 +17,10 @@ export default {
       console.log('mounted');
     });
 
+    //监视数据
+    watch(name, (newName, oldName) => {
+      console.log(newName, oldName);
+    });
     return {
       name,
       changeName,

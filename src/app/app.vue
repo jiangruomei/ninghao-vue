@@ -1,5 +1,5 @@
 <template>
-  <h3>{{ name }}</h3>
+  <h3 @click="name = 'NINGHAO'">{{ name }}</h3>
 </template>
 
 <script>
@@ -11,6 +11,7 @@ export default {
   },
 
   created() {
+    console.log(this.$data);
     const user = {
       name: '宁皓网',
     };
